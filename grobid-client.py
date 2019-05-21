@@ -130,7 +130,7 @@ if __name__ == "__main__":
     n =1
     try:
         n = int(args.n)
-        assert n > 0, "Concurrency parameter needs to be positive"
+        assert n > 0, "Concurrency parameter needs to be positive."
     except ValueError:
         print("Invalid concurrency parameter n:", n, "n = 10 will be used by default")
 
