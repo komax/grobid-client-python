@@ -96,6 +96,7 @@ class grobid_client(ApiClient):
         #print(str(status))
         #print(res.text)
 
+        # FIXME Implement a better error handling and report failed pdfs to a logger.
         if status == 503:
             time.sleep(self.config['sleep_time'])
             return self.process_pdf(pdf_file, output)
@@ -129,6 +130,7 @@ if __name__ == "__main__":
     n =1
     try:
         n = int(args.n)
+        assert n > 0, "Concurrency parameter needs to be positive"
     except ValueError:
         print("Invalid concurrency parameter n:", n, "n = 10 will be used by default")
 
