@@ -19,3 +19,6 @@ my_config.json
 __pycache__
 doc/
 
+# Ignore vscode
+.vscode/
+
